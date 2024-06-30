@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="./css/home-page-styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Welcome to the Dashboard</h1>
+            <button class="btn logout-btn" id="logoutButton"><img class="loader" src="./images/loader.gif"
+                    alt="Loading.."><span class="btn-label">Logout</span></button>
+        </nav>
+    </header>
+    <main>
+        <section class="user-section">
+            <h2>User Management</h2>
+            <button class="btn get-users-btn" id="get-users-btn"><img class="loader" src="./images/loader.gif"
+                    alt="Loading.."><span class="btn-label">Get All Users</span></button>
+        </section>
+    </main>
+    <div id="userList" class="user-list-container">
+        <!-- Users will be dynamically added here -->
+    </div>
+
+    <script src="./script/logoutScript.js"></script>
+</body>
+
+</html>

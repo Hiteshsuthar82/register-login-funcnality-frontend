@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="image-container">
+                <img src="https://w7.pngwing.com/pngs/521/804/png-transparent-computer-icons-symbol-login-register-button-miscellaneous-logo-online-chat.png" alt="Logo">
+            </div>
+            <form class="form" id="registrationForm">
+                <h2>Register</h2>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">confirmPassword</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit">Register</button>
+                <p class="message">Already have an account? <a href="login.html">Login</a></p>
+            </form>
+        </div>
+        <div id="popup" class="popup hidden">
+            <span id="popup-message"></span>
+            <button id="close-popup" class="close-btn">&times;</button>
+        </div>
+    </div>
+    <script type="module" src="./script/popup.js"></script>
+    <script type="module" src="./script/regesterScript.js"></script>
+</body>
+</html>
