@@ -35,7 +35,7 @@ loginForm.addEventListener("submit", async (e) => {
       showPopup("user Loged in successfully");
       setTimeout(() => {
         console.log('you are loged in');
-        // window.location = "index.html";
+        window.location = "index.html";
       }, 2000);
     } else {
       showPopup(data.message, true);
