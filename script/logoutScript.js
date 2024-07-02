@@ -1,12 +1,18 @@
 const userListContainer = document.getElementById("userList");
+const logoutBtn = document.getElementById("logoutButton");
+const getAllUser = document.getElementById("get-users-btn");
 
-document.getElementById("logoutButton").addEventListener("click", async () => {
+logoutBtn.addEventListener("click", async () => {
   try {
+    disableEnableButton(logoutBtn, "gray", false);
+
     const response = await fetch("https://register-login-funcnality-backend-by.onrender.com/api/v1/auth/logout", {
       method: "GET",
       credentials: "include",
     });
     const data = await response.json();
+
+    disableEnableButton(logoutBtn, "#f44336", true);
 
     if (data.status == "success") {
       console.log("loged out successfully");
@@ -27,8 +33,10 @@ document.getElementById("logoutButton").addEventListener("click", async () => {
   }
 });
 
-document.getElementById("get-users-btn").addEventListener("click", async () => {
+getAllUser.addEventListener("click", async () => {
   try {
+    disableEnableButton(getAllUser, "gray", false);
+
     const response = await fetch(
       "https://register-login-funcnality-backend-by.onrender.com/api/v1/auth/getAllUsers",
       {
@@ -37,6 +45,8 @@ document.getElementById("get-users-btn").addEventListener("click", async () => {
       }
     );
     const data = await response.json();
+
+    disableEnableButton(getAllUser, "#2196F3", true);
 
     if (data.status == "success") {
       // TODO : imlplement the popup for getting user details successfully
@@ -71,3 +81,13 @@ document.getElementById("get-users-btn").addEventListener("click", async () => {
     });
   }
 });
+
+
+function disableEnableButton(element, color, cursor) {
+  element.style.backgroundColor = color;
+  if (cursor) {
+    element.style.cursor = "pointer";
+  } else {
+    element.style.cursor = "not-allowed";
+  }
+}

@@ -6,6 +6,8 @@ const forgotPasswordForm = document.getElementById("forgotPasswordForm");
 const emailPopup = document.getElementById("emailPopup");
 const emailPopupOverlay = document.querySelector(".email-popup-overlay");
 const closeEmailPopup = document.getElementById("closeEmailPopup");
+const loginBtn = document.getElementById("login-btn");
+const sendEmailBtn = document.getElementById("send-email-btn");
 
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -17,6 +19,8 @@ loginForm.addEventListener("submit", async (e) => {
   });
 
   try {
+    disableEnableButton(loginBtn, "gray", false);
+
     const response = await fetch("https://register-login-funcnality-backend-by.onrender.com/api/v1/auth/login", {
       method: "POST",
       headers: {
@@ -26,6 +30,8 @@ loginForm.addEventListener("submit", async (e) => {
       credentials: "include",
     });
     const data = await response.json();
+
+    disableEnableButton(loginBtn, "#007bff", true);
 
     if (data.status === "success") {
       console.log(data);
@@ -98,6 +104,8 @@ forgotPasswordForm.addEventListener("submit", async (e) => {
   const email = document.getElementById("forgotEmail").value;
 
   try {
+    disableEnableButton(sendEmailBtn, "gray", false);
+
     const response = await fetch(
       "https://register-login-funcnality-backend-by.onrender.com/api/v1/auth/forgotPassword",
       {
@@ -108,8 +116,9 @@ forgotPasswordForm.addEventListener("submit", async (e) => {
         body: JSON.stringify({ username, email }),
       }
     );
-
     const data = await response.json();
+
+    disableEnableButton(sendEmailBtn, "#007bff", true);
 
     if (data.status === "success") {
       showPopup("your email is correct & email is sent to you email address");
@@ -126,6 +135,15 @@ forgotPasswordForm.addEventListener("submit", async (e) => {
     showPopup(error.message, true);
   }
 });
+
+function disableEnableButton(element, color, cursor) {
+  element.style.backgroundColor = color;
+  if (cursor) {
+    element.style.cursor = "pointer";
+  } else {
+    element.style.cursor = "not-allowed";
+  }
+}
 
 function openEmailPopup() {
   emailPopup.style.display = "block";
