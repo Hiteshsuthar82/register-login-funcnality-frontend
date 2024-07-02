@@ -35,7 +35,7 @@ loginForm.addEventListener("submit", async (e) => {
       showPopup("user Loged in successfully");
       setTimeout(() => {
         console.log('you are loged in');
-        window.location = "index.html";
+        window.location = "https://register-login-funcnality-frontend.vercel.app/";
       }, 2000);
     } else {
       showPopup(data.message, true);
