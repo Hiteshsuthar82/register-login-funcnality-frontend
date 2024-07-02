@@ -5,7 +5,7 @@ const getAllUser = document.getElementById("get-users-btn");
 window.addEventListener("load", async () => {
   try {
     const response = await fetch(
-      "http://127.0.0.1:3000/api/v1/auth/userValid",
+      "https://register-login-funcnality-backend-by.onrender.com/api/v1/auth/userValid",
       {
         method: "GET",
         credentials: "include",
