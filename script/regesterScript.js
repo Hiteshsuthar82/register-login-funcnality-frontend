@@ -28,7 +28,7 @@ registerForm.addEventListener("submit", async (e) => {
       // TODO : setTimeout is used for showing successfull popup and the loader
       // TODO : imlplement the popup for regester successfull
       setTimeout(() => {
-        window.location.href = "index.html";
+        window.location.href = "https://register-login-funcnality-frontend.vercel.app";
       }, 2000);
     } else {
       // Handle errors (e.g., display error messages to the user)

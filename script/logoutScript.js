@@ -14,7 +14,7 @@ document.getElementById("logoutButton").addEventListener("click", async () => {
       // TODO : setTimeout is used for showing logout message popup and the loader
       // TODO : imlplement the popup for logout successfull
       setTimeout(() => {
-        window.location.href = "login.html";
+        window.location.href = "https://register-login-funcnality-frontend.vercel.app/login.html";
       }, 1000);
     } else {
       // TODO : imlplement the error popup for logout

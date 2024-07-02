@@ -36,7 +36,7 @@ loginForm.addEventListener("submit", async (e) => {
       setTimeout(() => {
         console.log('you are loged in');
         window.location = "https://register-login-funcnality-frontend.vercel.app";
-      }, 5000);
+      }, 2000);
     } else {
       showPopup(data.message, true);
     }
@@ -114,7 +114,7 @@ forgotPasswordForm.addEventListener("submit", async (e) => {
     if (data.status === "success") {
       showPopup("your email is correct & email is sent to you email address");
       setTimeout(() => {
-        window.location.href = "emailSentSuccessPage.html";
+        window.location.href = "https://register-login-funcnality-frontend.vercel.app/emailSentSuccessPage.html";
       }, 1000);
     } else {
       showPopup(data.message, true);
