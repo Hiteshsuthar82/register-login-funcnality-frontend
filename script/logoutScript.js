@@ -2,14 +2,40 @@ const userListContainer = document.getElementById("userList");
 const logoutBtn = document.getElementById("logoutButton");
 const getAllUser = document.getElementById("get-users-btn");
 
+window.addEventListener("load", async () => {
+  try {
+    const response = await fetch(
+      "http://127.0.0.1:3000/api/v1/auth/userValid",
+      {
+        method: "GET",
+        credentials: "include",
+      }
+    );
+    const data = await response.json();
+
+    if (data.status !== "success") {
+      window.location.href =
+        "https://register-login-funcnality-frontend.vercel.app/register.html";
+    } else {
+      console.log(data.message);
+    }
+  } catch (error) {
+    // TODO : imlplement the error popup for logout
+    console.error("Error Occur while sending request : ", error);
+  }
+});
+
 logoutBtn.addEventListener("click", async () => {
   try {
     disableEnableButton(logoutBtn, "gray", false);
 
-    const response = await fetch("https://register-login-funcnality-backend-by.onrender.com/api/v1/auth/logout", {
-      method: "GET",
-      credentials: "include",
-    });
+    const response = await fetch(
+      "https://register-login-funcnality-backend-by.onrender.com/api/v1/auth/logout",
+      {
+        method: "GET",
+        credentials: "include",
+      }
+    );
     const data = await response.json();
 
     disableEnableButton(logoutBtn, "#f44336", true);
@@ -20,7 +46,8 @@ logoutBtn.addEventListener("click", async () => {
       // TODO : setTimeout is used for showing logout message popup and the loader
       // TODO : imlplement the popup for logout successfull
       setTimeout(() => {
-        window.location.href = "https://register-login-funcnality-frontend.vercel.app/login.html";
+        window.location.href =
+          "https://register-login-funcnality-frontend.vercel.app/login.html";
       }, 1000);
     } else {
       // TODO : imlplement the error popup for logout
@@ -81,7 +108,6 @@ getAllUser.addEventListener("click", async () => {
     });
   }
 });
-
 
 function disableEnableButton(element, color, cursor) {
   element.style.backgroundColor = color;
