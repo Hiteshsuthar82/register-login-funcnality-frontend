@@ -3,7 +3,7 @@ const userListContainer = document.getElementById("userList");
 document.getElementById("logoutButton").addEventListener("click", async () => {
   try {
     const response = await fetch("https://register-login-funcnality-backend-by.onrender.com/api/v1/auth/logout", {
-      method: "get",
+      method: "GET",
       credentials: "include",
     });
     const data = await response.json();
@@ -32,7 +32,7 @@ document.getElementById("get-users-btn").addEventListener("click", async () => {
     const response = await fetch(
       "https://register-login-funcnality-backend-by.onrender.com/api/v1/auth/getAllUsers",
       {
-        method: "get",
+        method: "GET",
         credentials: "include",
       }
     );

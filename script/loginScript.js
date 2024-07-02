@@ -18,7 +18,7 @@ loginForm.addEventListener("submit", async (e) => {
 
   try {
     const response = await fetch("https://register-login-funcnality-backend-by.onrender.com/api/v1/auth/login", {
-      method: "post",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
@@ -35,7 +35,7 @@ loginForm.addEventListener("submit", async (e) => {
       showPopup("user Loged in successfully");
       setTimeout(() => {
         console.log('you are loged in');
-        window.location = "https://register-login-funcnality-frontend.vercel.app/";
+        window.location = "https://register-login-funcnality-frontend.vercel.app";
       }, 5000);
     } else {
       showPopup(data.message, true);

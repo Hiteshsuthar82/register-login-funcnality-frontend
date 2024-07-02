@@ -13,7 +13,7 @@ registerForm.addEventListener("submit", async (e) => {
 
   try {
     const response = await fetch("https://register-login-funcnality-backend-by.onrender.com/api/v1/auth/signup", {
-      method: "post",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
