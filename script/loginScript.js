@@ -123,7 +123,7 @@ forgotPasswordForm.addEventListener("submit", async (e) => {
     if (data.status === "success") {
       showPopup("your email is correct & email is sent to you email address");
       setTimeout(() => {
-        window.location.href = "https://register-login-funcnality-frontend.vercel.app/emailSentSuccessPage.html";
+        window.location = "https://register-login-funcnality-frontend.vercel.app/emailSentSuccessPage.html";
       }, 1000);
     } else {
       showPopup(data.message, true);
