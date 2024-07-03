@@ -14,7 +14,7 @@ window.addEventListener("load", async () => {
     const data = await response.json();
 
     if (data.status !== "success") {
-      window.location.href =
+      window.location =
         "https://register-login-funcnality-frontend.vercel.app/register.html";
     } else {
       console.log(data.message);
